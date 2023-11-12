@@ -1,6 +1,13 @@
 import streamlit as st
 import sqlite3
 from streamlit_option_menu import option_menu
+import hydralit_components as hc
+
+#can apply customisation to almost all the properties of the card, including the progress bar
+theme_bad = {'bgcolor': '#FFF0F0','title_color': 'red','content_color': 'red','icon_color': 'red', 'icon': 'fa fa-times-circle'}
+theme_neutral = {'bgcolor': '#f9f9f9','title_color': 'orange','content_color': 'orange','icon_color': 'orange', 'icon': 'fa fa-question-circle'}
+theme_good = {'bgcolor': '#EFF8F7','title_color': 'green','content_color': 'green','icon_color': 'green', 'icon': 'fa fa-check-circle'}
+
 
 DB_NAME = "userdata.db"
 
@@ -64,13 +71,15 @@ def main():
         # Submit button to store data
         if st.button("Submit"):
             if is_valid_mobile_number(mobile_no):
-                st.success("Valid mobile number entered: " + mobile_no)
+                ...
+                #st.success("Valid mobile number entered: " + mobile_no)
             else:
                 st.warning("Please enter a valid 10-digit mobile number.")
 
             if name and address and mobile_no:
                 # Insert data into the database
                 insert_data(name, address, mobile_no)
+                hc.info_card(title='Valid Data', content='All good!', sentiment='good',bar_value=77)
                 st.success("Data submitted successfully!")
             else:
                 st.warning("Please fill in all fields.")
