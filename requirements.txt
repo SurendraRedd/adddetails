@@ -1,1 +1,14 @@
 streamlit
+streamlit-option-menu
+streamlit-authenticator
+streamlit-pydantic
+streamlit-extras
+streamlit-login-auth-ui
+streamlit-awesome-table
+streamlit-card
+streamlit-kickoff-cli
+streamlit-metrics
+hydralit-components
+streamlit-pretty-notification-box
+st-star-rating
+streamlit-permalink
